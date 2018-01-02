@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BudgetView</class>
+ <widget class="QMainWindow" name="BudgetView">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>BudgetView v1.02</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../Resources/Icons.qrc">
+    <normaloff>:/Icons/view-financial-transfer.png</normaloff>:/Icons/view-financial-transfer.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="MainSplitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QTreeView" name="invoicesView">
+       <property name="contextMenuPolicy">
+        <enum>Qt::CustomContextMenu</enum>
+       </property>
+       <property name="indentation">
+        <number>0</number>
+       </property>
+       <property name="rootIsDecorated">
+        <bool>false</bool>
+       </property>
+       <property name="uniformRowHeights">
+        <bool>true</bool>
+       </property>
+       <property name="itemsExpandable">
+        <bool>true</bool>
+       </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+       <attribute name="headerMinimumSectionSize">
+        <number>37</number>
+       </attribute>
+      </widget>
+      <widget class="QSplitter" name="SubSplitter">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <widget class="QListWidget" name="detailedWidget"/>
+       <widget class="QTextEdit" name="commentsBox">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="Statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>640</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>&amp;Menu</string>
+    </property>
+    <addaction name="actionNew_invoice"/>
+    <addaction name="separator"/>
+    <addaction name="actionRelations"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout_BudgetView"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuAnalysis">
+    <property name="title">
+     <string>Analysis</string>
+    </property>
+    <addaction name="actionBalance"/>
+    <addaction name="actionCashflow"/>
+    <addaction name="actionVAT"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionSearch"/>
+    <addaction name="actionClear_search"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuView"/>
+   <addaction name="menuAnalysis"/>
+  </widget>
+  <action name="actionCustomers">
+   <property name="text">
+    <string>Add new</string>
+   </property>
+  </action>
+  <action name="actionSuppliers">
+   <property name="text">
+    <string>View</string>
+   </property>
+  </action>
+  <action name="actionNew_invoice">
+   <property name="icon">
+    <iconset resource="../Resources/Icons.qrc">
+     <normaloff>:/Icons/document-new.png</normaloff>:/Icons/document-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>New invoice</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="../Resources/Icons.qrc">
+     <normaloff>:/Icons/application-exit.png</normaloff>:/Icons/application-exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionAbout_BudgetView">
+   <property name="icon">
+    <iconset resource="../Resources/Icons.qrc">
+     <normaloff>:/Icons/system-help.png</normaloff>:/Icons/system-help.png</iconset>
+   </property>
+   <property name="text">
+    <string>About BudgetView</string>
+   </property>
+  </action>
+  <action name="actionRelations">
+   <property name="icon">
+    <iconset resource="../Resources/Icons.qrc">
+     <normaloff>:/Icons/preferences-contact-list.png</normaloff>:/Icons/preferences-contact-list.png</iconset>
+   </property>
+   <property name="text">
+    <string>Relations</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="actionBalance">
+   <property name="icon">
+    <iconset resource="../Resources/Icons.qrc">
+     <normaloff>:/Icons/view-expenses-categories.png</normaloff>:/Icons/view-expenses-categories.png</iconset>
+   </property>
+   <property name="text">
+    <string>Balance</string>
+   </property>
+   <property name="shortcut">
+    <string>F9</string>
+   </property>
+  </action>
+  <action name="actionCashflow">
+   <property name="icon">
+    <iconset resource="../Resources/Icons.qrc">
+     <normaloff>:/Icons/view-financial-list.png</normaloff>:/Icons/view-financial-list.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cashflow</string>
+   </property>
+   <property name="shortcut">
+    <string>F10</string>
+   </property>
+  </action>
+  <action name="actionVAT">
+   <property name="icon">
+    <iconset resource="../Resources/Icons.qrc">
+     <normaloff>:/Icons/view-income-categories.png</normaloff>:/Icons/view-income-categories.png</iconset>
+   </property>
+   <property name="text">
+    <string>VAT</string>
+   </property>
+   <property name="shortcut">
+    <string>F11</string>
+   </property>
+  </action>
+  <action name="actionSearch">
+   <property name="text">
+    <string>Search</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionClear_search">
+   <property name="text">
+    <string>Clear search</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Space</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../Resources/Icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
